@@ -12,7 +12,6 @@ I build LLM-powered products and data-driven web platforms. I run [Agulhas Code]
 
 | Project | What it is |
 |---|---|
-| **[LeasEase](leasease)** | AI-powered property leasing platform. Embedding-based tenant↔listing matching, LLM-driven listing generation. Postgres + pgvector, Next.js, FastAPI, OpenAI. |
 | **[InsightEngine](insightengine)** | Natural-language SQL analytics over a multi-table warehouse. ~94% accuracy on benchmark business questions, 0 destructive incidents. |
 | **[RAG Chatbot](rag-chatbot)** | Production support chatbot. Hybrid retrieval (cosine + BM25), citation-guarded responses, faithfulness eval. |
 | **[Churn & MRR Forecasting](churn-forecasting)** | XGBoost churn classifier + Prophet MRR forecast for a SaaS client. ROC-AUC 0.87, top-decile precision 0.62. |
