@@ -1,52 +1,72 @@
-# Hi — I'm Darrshan 👋
+<div align="center">
 
-**Senior AI Engineer · LLM / RAG · Full-Stack · Data & SQL · Durban, South Africa (GMT+2)**
+# Darrshan Govender
 
-I build LLM-powered products and data-driven web platforms. I run [Agulhas Code](https://agulhascode.co.za), a Durban-based engineering studio shipping AI features, RAG systems, and data pipelines for SMEs across South Africa.
+### Senior AI Engineer · LLM / RAG · Full-Stack · Data &amp; SQL
 
-> **Available** for fractional / contract AI engagements (10–30 hrs/week). Full EMEA timezone overlap, 4-hour US ET overlap.
+[![Available](https://img.shields.io/badge/Available-Fractional%20%2F%20Contract%20%2810%E2%80%9330%20hrs%2Fwk%29-059669?style=for-the-badge)](mailto:darrshangovender@gmail.com)
+[![Location](https://img.shields.io/badge/Durban%2C%20South%20Africa-GMT%2B2-1F3A8A?style=for-the-badge)](#)
+[![Email](https://img.shields.io/badge/-darrshangovender%40gmail.com-555?style=for-the-badge&logo=gmail&logoColor=white)](mailto:darrshangovender@gmail.com)
+[![Website](https://img.shields.io/badge/-agulhascode.co.za-555?style=for-the-badge&logo=safari&logoColor=white)](https://agulhascode.co.za)
+
+</div>
 
 ---
 
-## Production projects
+I build **LLM-powered products** and **data-driven web platforms**. I run [**Agulhas Code**](https://agulhascode.co.za) — a Durban engineering studio shipping AI features, RAG systems, and data pipelines for SMEs across South Africa.
 
-| Project | What it is |
-|---|---|
-| **[InsightEngine](../../insightengine)** | Natural-language SQL analytics over a multi-table warehouse. ~94% accuracy on benchmark business questions, 0 destructive incidents. |
-| **[RAG Chatbot](../../rag-chatbot)** | Production support chatbot. Hybrid retrieval (cosine + BM25), citation-guarded responses, faithfulness eval. |
-| **[Churn & MRR Forecasting](../../churn-forecasting)** | XGBoost churn classifier + Prophet MRR forecast for a SaaS client. ROC-AUC 0.87, top-decile precision 0.62. |
-| **[Recommendation Engine](../../recommendation-engine)** | Hybrid content + collaborative recommender for an e-commerce client. Recall@10 = 0.41 vs 0.18 baseline. |
-| **[Lead Scorer](../../lead-scorer)** | B2B lead-ranking. XGBoost + LR baseline for trust. Top-decile precision held at ~0.6 in production. |
-| **[Document-Intelligence Pipeline](../../doc-intelligence)** | OCR → LLM extraction → schema validation → Postgres for invoices and statements. Exception queue + human-in-the-loop few-shot store. |
+Full EMEA timezone overlap. 4 hours of US Eastern overlap. Async-first.
 
-## Open-source tooling
+---
 
-The reusable patterns from the production work, extracted as standalone libraries:
+### What I'm shipping in production
+
+| Project | What it does | Headline result |
+|---|---|---|
+| [**InsightEngine**](../../insightengine) | NL→SQL analytics over multi-table warehouses with sqlglot AST guardrails | **~94% accuracy** · **0 destructive incidents** |
+| [**RAG Chatbot**](../../rag-chatbot) | Production support bot · hybrid retrieval (cosine + BM25) · citation-guarded | **Faithfulness > 0.95** · **Recall@5 > 0.85** |
+| [**Churn &amp; MRR Forecasting**](../../churn-forecasting) | XGBoost churn classifier + Prophet MRR forecast for a SaaS client | **ROC-AUC 0.87** · **Top-decile precision 0.62** |
+| [**Recommendation Engine**](../../recommendation-engine) | Hybrid content + collaborative recommender for an e-commerce client | **Recall@10 = 0.41** vs **0.18** baseline |
+| [**Lead Scorer**](../../lead-scorer) | B2B lead-ranking with LR baseline + XGBoost ranker, scores pushed to CRM | **Top-decile precision ~0.6** |
+| [**Document-Intelligence**](../../doc-intelligence) | OCR → LLM extraction → Pydantic schema validation → human-review queue | Replaces manual data entry |
+
+### Open-source tooling
+
+Reusable patterns extracted from the production work above:
 
 | Repo | What it does |
 |---|---|
-| **[rag-eval-harness](../../rag-eval-harness)** | Production-grade evals for RAG systems. Faithfulness, answer relevance, retrieval recall@k, latency, cost. Runs in CI, gates merges. |
-| **[prompt-eval-toolkit](../../prompt-eval-toolkit)** | A/B test prompt versions on a dataset. Bootstrap p-values, single-number verdict, fail-the-build on regression. |
-| **[agent-tool-router](../../agent-tool-router)** | Small, well-evaluated tool-use router. Two-stage embedding-then-LLM routing with explicit refusal. |
-| **[sql-guardrails](../../sql-guardrails)** | Make LLM-generated SQL safe to execute. sqlglot AST parsing, EXPLAIN cost limits, deny-by-default allowlists. |
+| [**rag-eval-harness**](../../rag-eval-harness) | Production-grade evals for RAG systems · faithfulness, recall@k, latency, cost · runs in CI |
+| [**prompt-eval-toolkit**](../../prompt-eval-toolkit) | A/B test prompt versions with paired-bootstrap p-values · fail-the-build on regression |
+| [**agent-tool-router**](../../agent-tool-router) | LLM tool-use router · two-stage embedding-then-LLM with explicit refusal fallback |
+| [**sql-guardrails**](../../sql-guardrails) | Make LLM-generated SQL safe to execute · sqlglot AST + EXPLAIN cost limits |
 
-## Stack I reach for first
+---
 
-- **AI / LLM** — OpenAI, Anthropic, LangChain, RAG, embeddings, pgvector, evals
-- **ML** — scikit-learn, XGBoost, pandas/NumPy, Prophet
-- **Backend** — Python (FastAPI), Node.js, PostgreSQL, MySQL, Redis
-- **Frontend** — Next.js, React, TypeScript, Tailwind
-- **Cloud / Ops** — AWS (EC2, S3, Lambda, RDS), Vercel, Docker, GitHub Actions
+### Stack
 
-## How I work
+`Python` · `FastAPI` · `TypeScript` · `Next.js` · `PostgreSQL` · `pgvector` · `OpenAI` · `Anthropic` · `LangChain` · `XGBoost` · `scikit-learn` · `AWS` · `Vercel` · `Docker`
 
-- Ship end-to-end — discovery, architecture, build, deploy, monitor.
-- Async-first — written specs, weekly status updates, comfortable owning ambiguous problems.
-- Test what you ship — every prompt change runs an eval suite before merge.
-- Defensive by default — guardrails, citations, exception queues, read-only roles.
+---
 
-## Get in touch
+### How I work
 
-- 📧 darrshangovender@gmail.com
-- 🌐 [agulhascode.co.za](https://agulhascode.co.za)
-- 📍 Durban, South Africa (GMT+2)
+- **Ship end-to-end** — discovery, architecture, build, deploy, monitor
+- **Async-first** — written specs, weekly status updates, comfortable owning ambiguous problems
+- **Test what you ship** — every prompt change runs an eval suite before merge
+- **Defensive by default** — guardrails, citations, exception queues, read-only roles
+
+---
+
+### GitHub
+
+<a href="https://github.com/darrshangovender">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=darrshangovender&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&hide=issues,prs" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=darrshangovender&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+</a>
+
+---
+
+### Get in touch
+
+📧 [darrshangovender@gmail.com](mailto:darrshangovender@gmail.com) &nbsp;·&nbsp; 🌐 [agulhascode.co.za](https://agulhascode.co.za) &nbsp;·&nbsp; 📍 Durban, South Africa (GMT+2)
