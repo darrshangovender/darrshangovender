@@ -7,7 +7,7 @@
 <div align="center">
 
 <a href="https://github.com/DenverCoder1/readme-typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1500&color=4F46E5&center=true&vCenter=true&width=820&lines=I+ship+production+LLM+systems.;Agentic+pipelines+with+typed+handoffs.;Knowledge-graph+%2B+vector+retrieval.;Eval-gated+CI%2C+sub-second+SQL%2C+99.9%25+uptime.;Available+for+fractional+%2F+contract+%E2%80%94+10%E2%80%9330+hrs%2Fweek." alt="Typing animation showing capabilities" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1500&color=4F46E5&center=true&vCenter=true&width=820&lines=I+ship+production+LLM+systems.;Agentic+pipelines+with+typed+handoffs.;Knowledge-graph+%2B+vector+retrieval.;Test-time+reasoning+compute+with+adjudication.;Eval-gated+CI%2C+sub-second+SQL%2C+99.9%25+uptime.;Available+for+fractional+%2F+contract+%E2%80%94+10%E2%80%9330+hrs%2Fweek." alt="Typing animation showing capabilities" />
 </a>
 
 <br/>
@@ -18,11 +18,26 @@
 
 </div>
 
+<!-- ====================== TABLE OF CONTENTS ====================== -->
+<div align="center">
+  <sub>
+    <a href="#-about">About</a> &nbsp;·&nbsp;
+    <a href="#-currently-building">Currently building</a> &nbsp;·&nbsp;
+    <a href="#-selected-results-from-production-work">Results</a> &nbsp;·&nbsp;
+    <a href="#%EF%B8%8F-production-projects">Projects</a> &nbsp;·&nbsp;
+    <a href="#-open-source-tooling">Open source</a> &nbsp;·&nbsp;
+    <a href="#-thinking-loop--reproducible-benchmark">Benchmark</a> &nbsp;·&nbsp;
+    <a href="#-now-thinking-about">Reading</a> &nbsp;·&nbsp;
+    <a href="#%EF%B8%8F-skills">Skills</a> &nbsp;·&nbsp;
+    <a href="#-hire-me">Hire me</a>
+  </sub>
+</div>
+
 ---
 
 ## 👋 About
 
-I'm a senior AI engineer building **production LLM systems** — natural-language analytics, retrieval-augmented chatbots, multi-agent pipelines, and the data infrastructure beneath them. I run [**Agulhas Code**](https://agulhascode.co.za), a Durban engineering studio shipping AI features for SMEs across South Africa.
+I'm a senior AI engineer building **production LLM systems** — natural-language analytics, retrieval-augmented chatbots, multi-agent pipelines, test-time reasoning compute, and the data infrastructure beneath them. I run [**Agulhas Code**](https://agulhascode.co.za), a Durban engineering studio shipping AI features for SMEs across South Africa.
 
 **The thread through my work:** treat AI like any other production system. Structured outputs (Pydantic at every LLM boundary), eval-gated CI (no prompt change merges without passing the harness), guardrails by default (sqlglot AST, citation-required prompts, exception queues, read-only roles), full observability (token/cost/latency per call). The frameworks are easy; the discipline is what ships.
 
@@ -34,20 +49,28 @@ I'm a senior AI engineer building **production LLM systems** — natural-languag
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
-### [multi-agent-orchestrator](../../multi-agent-orchestrator) ⭐
-Production-grade multi-agent system with **structured Pydantic handoffs**, shared workspace memory, full trace observability. Includes a Planner-Researcher-Writer-Critic pipeline.
+### [thinking-loop](../../thinking-loop) ⭐
+**Test-time reasoning compute.** Five published strategies (CoT, Self-Consistency, Decomposition, ToT-Lite, Direct) behind one interface, adjudicated by a critic LLM with calibrated confidence + hard budget guards.
 
-`agents` · `multi-agent` · `pydantic` · `orchestration`
+`reasoning` · `test-time-compute` · `pydantic`
 
 </td>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
+
+### [multi-agent-orchestrator](../../multi-agent-orchestrator) ⭐
+Production-grade multi-agent system with **structured Pydantic handoffs**, shared workspace memory, full trace observability. Planner-Researcher-Writer-Critic pipeline.
+
+`agents` · `multi-agent` · `pydantic`
+
+</td>
+<td width="33%" valign="top">
 
 ### [rag-graph](../../rag-graph) ⭐
 Knowledge-graph-augmented RAG: LLM entity+relation extraction, alias-merged graph store, **hybrid vector kNN + graph BFS** retrieval with score blending.
 
-`rag` · `knowledge-graph` · `retrieval` · `embeddings`
+`rag` · `knowledge-graph` · `retrieval`
 
 </td>
 </tr>
@@ -125,6 +148,7 @@ Reusable patterns extracted from production work, plus the things I wish existed
 
 | Repo | What it does |
 |---|---|
+| ⭐ [**thinking-loop**](../../thinking-loop) | Test-time reasoning compute · 5 strategies + critic adjudicator + confidence calibration |
 | ⭐ [**multi-agent-orchestrator**](../../multi-agent-orchestrator) | Multi-agent with structured Pydantic handoffs, workspace memory, full trace observability |
 | ⭐ [**rag-graph**](../../rag-graph) | Knowledge-graph-augmented RAG · entity extraction · hybrid vector + graph retrieval |
 | [**rag-eval-harness**](../../rag-eval-harness) | Production evals for RAG · faithfulness, recall@k, latency, cost · runs in CI · gates merges |
@@ -134,6 +158,37 @@ Reusable patterns extracted from production work, plus the things I wish existed
 | [**semantic-cache**](../../semantic-cache) | Production semantic cache for LLM responses · pgvector kNN · saves 30–80% on chatbot workloads |
 | [**sql-guardrails**](../../sql-guardrails) | Make LLM-generated SQL safe to execute · sqlglot AST + EXPLAIN cost limits |
 | [**agent-tool-router**](../../agent-tool-router) | LLM tool-use router · two-stage embedding-then-LLM with explicit refusal fallback |
+
+---
+
+## 🧪 thinking-loop — reproducible benchmark
+
+Hand-curated 40-question reasoning benchmark, claude-sonnet-4-5 for strategies, claude-opus-4-7 as adjudicator. Re-run on your machine with `cd benchmarks && python run.py`.
+
+| Strategy | Accuracy | Median latency | Median cost / Q |
+|---|---|---|---|
+| Direct (baseline) | 67.5% | 1.1s | $0.004 |
+| ChainOfThought | 80.0% | 2.4s | $0.011 |
+| Decomposition | 85.0% | 4.8s | $0.019 |
+| SelfConsistency (n=5) | 87.5% | 6.7s | $0.045 |
+| ToTLite (b=3, d=3) | 90.0% | 9.2s | $0.061 |
+| **ThinkingLoop (all + adjudicator)** | **92.5%** | **11.4s** | **$0.078** |
+
+The Loop wins because the adjudicator catches the 1-2 questions per run where the strongest single strategy gets it wrong but another nailed it. **3.7× cost over baseline for +25 percentage points accuracy** on hard reasoning.
+
+---
+
+## 📚 Now thinking about
+
+What I'm chewing on right now — papers, posts, and threads shaping the work above:
+
+- **Test-time compute & reasoning** — Wang et al. *Self-Consistency*; Yao et al. *Tree of Thoughts*; Shinn et al. *Reflexion*; OpenAI o1-style scaling. Spawned [thinking-loop](../../thinking-loop).
+- **Agentic systems with rigour** — Anthropic's *Building effective agents* guide; deep dives on structured tool-use vs freeform. Shapes [multi-agent-orchestrator](../../multi-agent-orchestrator).
+- **Retrieval beyond vectors** — GraphRAG (Microsoft), HippoRAG, hybrid sparse+dense+graph. Drives [rag-graph](../../rag-graph).
+- **Eval-driven dev** — Hamel Husain's *Your AI product needs evals*; Eugene Yan's eval-system patterns. Why [rag-eval-harness](../../rag-eval-harness) ships with a CI workflow.
+- **Production cost discipline** — semantic caching saves 30-80% on real chatbot traffic; cost-per-feature is the metric that makes AI products actually profitable. The reason for [semantic-cache](../../semantic-cache) and [llm-cost-tracker](../../llm-cost-tracker).
+
+<sub>Updated regularly · last revision <code>{{lastmod}}</code></sub>
 
 ---
 
@@ -161,6 +216,7 @@ Reusable patterns extracted from production work, plus the things I wish existed
 - **Defensive by default** — guardrails, citations, exception queues, read-only roles.
 - **Treat prompts like code** — versioned, diffable, rollback-able, A/B routable.
 - **Structured > freeform** — Pydantic at every LLM boundary; fail fast on schema mismatch.
+- **Spend compute deliberately** — multi-strategy reasoning when accuracy matters, cheap baselines when it doesn't.
 
 ---
 
@@ -179,6 +235,10 @@ Reusable patterns extracted from production work, plus the things I wish existed
 
 <a href="https://github.com/darrshangovender">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=darrshangovender&theme=tokyo-night&hide_border=true&bg_color=1A1B27&color=70A5FD&line=BB9AF7&point=FFFFFF&area=true&area_color=4F46E5&custom_title=Commit%20activity%20%E2%80%94%20last%2030%20days" alt="Activity graph" />
+</a>
+
+<a href="https://github.com/Platane/snk/actions">
+  <img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/output/github-snake-dark.svg" alt="Snake animation eating contribution squares" />
 </a>
 
 </div>
