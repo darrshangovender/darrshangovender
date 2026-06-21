@@ -19,6 +19,53 @@ Full EMEA timezone overlap. 4 hours of US Eastern overlap. Async-first.
 
 ---
 
+### Selected results from production work
+
+<table>
+<tr>
+<td valign="top" width="33%">
+
+**~94%** &nbsp;benchmark accuracy<br/>
+*InsightEngine · NL→SQL · 0 destructive incidents*
+
+</td>
+<td valign="top" width="33%">
+
+**Faithfulness > 0.95**<br/>
+*RAG Chatbot · Recall@5 > 0.85*
+
+</td>
+<td valign="top" width="33%">
+
+**ROC-AUC 0.87**<br/>
+*Churn classifier · top-decile precision 0.62*
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+**99.9%+ uptime**<br/>
+*across live client systems*
+
+</td>
+<td valign="top">
+
+**Sub-second queries**<br/>
+*from minutes · multi-million-row Postgres*
+
+</td>
+<td valign="top">
+
+**Recall@10 = 0.41**<br/>
+*Recommender · 0.18 baseline*
+
+</td>
+</tr>
+</table>
+
+---
+
 ### What I'm shipping in production
 
 | Project | What it does | Headline result |
@@ -32,12 +79,15 @@ Full EMEA timezone overlap. 4 hours of US Eastern overlap. Async-first.
 
 ### Open-source tooling
 
-Reusable patterns extracted from the production work above:
+Reusable patterns extracted from the production work, plus the things I wish existed when I started:
 
 | Repo | What it does |
 |---|---|
-| [**rag-eval-harness**](../../rag-eval-harness) | Production-grade evals for RAG systems · faithfulness, recall@k, latency, cost · runs in CI |
+| [**rag-eval-harness**](../../rag-eval-harness) | Production evals for RAG · faithfulness, recall@k, latency, cost · runs in CI · gates merges |
 | [**prompt-eval-toolkit**](../../prompt-eval-toolkit) | A/B test prompt versions with paired-bootstrap p-values · fail-the-build on regression |
+| [**prompt-versioner**](../../prompt-versioner) | Git-style version control for prompts · hash-stable weighted A/B routing · CLI + library |
+| [**llm-cost-tracker**](../../llm-cost-tracker) | Token / cost / latency observability per call · SQLite store · CLI for stats |
+| [**semantic-cache**](../../semantic-cache) | Production semantic cache for LLM responses · pgvector kNN · saves 30–80% on chatbot workloads |
 | [**agent-tool-router**](../../agent-tool-router) | LLM tool-use router · two-stage embedding-then-LLM with explicit refusal fallback |
 | [**sql-guardrails**](../../sql-guardrails) | Make LLM-generated SQL safe to execute · sqlglot AST + EXPLAIN cost limits |
 
@@ -45,7 +95,7 @@ Reusable patterns extracted from the production work above:
 
 ### Stack
 
-`Python` · `FastAPI` · `TypeScript` · `Next.js` · `PostgreSQL` · `pgvector` · `OpenAI` · `Anthropic` · `LangChain` · `XGBoost` · `scikit-learn` · `AWS` · `Vercel` · `Docker`
+`Python` · `FastAPI` · `TypeScript` · `Next.js` · `PostgreSQL` · `pgvector` · `OpenAI` · `Anthropic` · `LangChain` · `XGBoost` · `scikit-learn` · `Prophet` · `AWS` · `Vercel` · `Docker` · `GitHub Actions`
 
 ---
 
@@ -55,6 +105,7 @@ Reusable patterns extracted from the production work above:
 - **Async-first** — written specs, weekly status updates, comfortable owning ambiguous problems
 - **Test what you ship** — every prompt change runs an eval suite before merge
 - **Defensive by default** — guardrails, citations, exception queues, read-only roles
+- **Treat prompts like code** — versioned, diffable, rollback-able, A/B routable
 
 ---
 
