@@ -164,17 +164,21 @@ Reusable patterns extracted from production work, plus the things I wish existed
 
 ---
 
-## 📈 GitHub
+## 📈 GitHub activity
 
 <div align="center">
 
 <a href="https://github.com/darrshangovender">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=darrshangovender&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&hide=issues,prs" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=darrshangovender&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&hide=issues,prs&hide_rank=true&custom_title=Shipping%20activity" />
   <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=darrshangovender&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
 </a>
 
 <a href="https://github.com/darrshangovender">
   <img src="https://github-readme-streak-stats.herokuapp.com?user=darrshangovender&theme=tokyonight&hide_border=true&background=1A1B27&ring=70A5FD&fire=BB9AF7&currStreakLabel=70A5FD" alt="GitHub streak" />
+</a>
+
+<a href="https://github.com/darrshangovender">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=darrshangovender&theme=tokyo-night&hide_border=true&bg_color=1A1B27&color=70A5FD&line=BB9AF7&point=FFFFFF&area=true&area_color=4F46E5&custom_title=Commit%20activity%20%E2%80%94%20last%2030%20days" alt="Activity graph" />
 </a>
 
 </div>
