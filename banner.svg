@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 280" role="img" aria-label="Darrshan Govender — Senior AI Engineer, LLM RAG Full-Stack, Durban GMT+2, available for fractional and contract work">
+  <defs>
+    <!-- background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1530"/>
+      <stop offset="55%" stop-color="#1f3a8a"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <!-- accent line gradient -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <!-- dot pattern -->
+    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#ffffff" opacity="0.06"/>
+    </pattern>
+    <!-- node circuit clip -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1280" height="280" fill="url(#bg)"/>
+  <rect width="1280" height="280" fill="url(#dots)"/>
+
+  <!-- decorative right-side node graph (suggests "agentic / connected systems") -->
+  <g opacity="0.55" filter="url(#glow)" transform="translate(900, 35)">
+    <!-- nodes -->
+    <circle cx="60"  cy="40"  r="6" fill="#22d3ee"/>
+    <circle cx="180" cy="20"  r="5" fill="#a855f7"/>
+    <circle cx="260" cy="80"  r="6" fill="#22d3ee"/>
+    <circle cx="120" cy="120" r="5" fill="#ffffff"/>
+    <circle cx="220" cy="170" r="6" fill="#a855f7"/>
+    <circle cx="40"  cy="170" r="5" fill="#22d3ee"/>
+    <circle cx="320" cy="40"  r="4" fill="#ffffff"/>
+    <circle cx="320" cy="170" r="5" fill="#22d3ee"/>
+    <!-- edges -->
+    <g stroke="#22d3ee" stroke-width="1.2" opacity="0.7" fill="none">
+      <line x1="60"  y1="40"  x2="180" y2="20"/>
+      <line x1="180" y1="20"  x2="260" y2="80"/>
+      <line x1="60"  y1="40"  x2="120" y2="120"/>
+      <line x1="120" y1="120" x2="220" y2="170"/>
+      <line x1="120" y1="120" x2="40"  y2="170"/>
+      <line x1="260" y1="80"  x2="320" y2="40"/>
+      <line x1="260" y1="80"  x2="220" y2="170"/>
+      <line x1="220" y1="170" x2="320" y2="170"/>
+    </g>
+  </g>
+
+  <!-- left accent bar -->
+  <rect x="60" y="60" width="4" height="160" fill="url(#accent)" rx="2"/>
+
+  <!-- main typography -->
+  <g font-family="'Segoe UI', 'Inter', system-ui, sans-serif" fill="#ffffff">
+    <!-- eyebrow -->
+    <text x="80" y="80" font-size="14" font-weight="700" letter-spacing="3" fill="#a5b4fc">SENIOR AI ENGINEER</text>
+    <!-- name -->
+    <text x="80" y="140" font-size="56" font-weight="800" letter-spacing="-1.5">Darrshan Govender</text>
+    <!-- tagline -->
+    <text x="80" y="180" font-size="20" font-weight="500" opacity="0.92">
+      LLM &amp; RAG  ·  Agentic systems  ·  Production ML  ·  Full-stack delivery
+    </text>
+    <!-- availability strip -->
+    <g transform="translate(80, 215)">
+      <rect x="0" y="0" width="220" height="32" rx="16" fill="#059669"/>
+      <text x="110" y="21" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="0.5">AVAILABLE · 10–30 HRS/WEEK</text>
+      <rect x="232" y="0" width="170" height="32" rx="16" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
+      <text x="317" y="21" text-anchor="middle" font-size="13" font-weight="600">Durban  ·  GMT+2</text>
+      <rect x="414" y="0" width="160" height="32" rx="16" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
+      <text x="494" y="21" text-anchor="middle" font-size="13" font-weight="600">EMEA  ·  4hr US ET</text>
+    </g>
+  </g>
+
+  <!-- subtle bottom accent line -->
+  <rect x="0" y="278" width="1280" height="2" fill="url(#accent)" opacity="0.8"/>
+</svg>
