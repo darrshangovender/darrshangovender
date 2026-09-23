@@ -28,14 +28,19 @@ Those four compose into one thesis about inference economics: **route to the che
 
 ### Also open source
 
-[**agent-runtime**](https://github.com/darrshangovender/agent-runtime) — checkpointed state-machine executor for agents: resume after a crash, break identical-call loops, fall back across models
-[**mcp-gateway**](https://github.com/darrshangovender/mcp-gateway) — MCP server with API-key auth, tenant isolation, per-tool guardrails, rate limits and an audit log
-[**whatsapp-agent-kit**](https://github.com/darrshangovender/whatsapp-agent-kit) — WhatsApp Cloud API agents: webhook dedup, the 24-hour window, human handoff, POPIA redaction
-[**multi-agent-orchestrator**](https://github.com/darrshangovender/multi-agent-orchestrator) — typed Pydantic handoffs between agents, workspace memory, full trace observability
-[**rag-graph**](https://github.com/darrshangovender/rag-graph) — knowledge-graph-augmented retrieval; hybrid vector kNN + graph BFS for multi-hop questions
-[**rag-eval-harness**](https://github.com/darrshangovender/rag-eval-harness) — faithfulness, recall@k, latency and cost, wired into CI so a prompt change can't merge on a regression
-[**sql-guardrails**](https://github.com/darrshangovender/sql-guardrails) — sqlglot AST allowlisting so LLM-written SQL can't drop a table
-[**semantic-cache**](https://github.com/darrshangovender/semantic-cache) · [**llm-cost-tracker**](https://github.com/darrshangovender/llm-cost-tracker) · [**prompt-versioner**](https://github.com/darrshangovender/prompt-versioner) — the cost and reliability plumbing
+- [**agent-runtime**](https://github.com/darrshangovender/agent-runtime) — checkpointed state-machine executor for agents: resume after a crash, break identical-call loops, fall back across models
+- [**mcp-gateway**](https://github.com/darrshangovender/mcp-gateway) — MCP server with API-key auth, tenant isolation, per-tool guardrails, rate limits and an audit log
+- [**whatsapp-agent-kit**](https://github.com/darrshangovender/whatsapp-agent-kit) — WhatsApp Cloud API agents: webhook dedup, the 24-hour window, human handoff, POPIA redaction
+- [**multi-agent-orchestrator**](https://github.com/darrshangovender/multi-agent-orchestrator) — typed Pydantic handoffs between agents, workspace memory, full trace observability
+- [**rag-graph**](https://github.com/darrshangovender/rag-graph) — knowledge-graph-augmented retrieval; hybrid vector kNN + graph BFS for multi-hop questions
+- [**rag-eval-harness**](https://github.com/darrshangovender/rag-eval-harness) — faithfulness, recall@k, latency and cost, wired into CI so a prompt change can't merge on a regression
+- [**sql-guardrails**](https://github.com/darrshangovender/sql-guardrails) — sqlglot AST allowlisting so LLM-written SQL can't drop a table
+- [**semantic-cache**](https://github.com/darrshangovender/semantic-cache) · [**llm-cost-tracker**](https://github.com/darrshangovender/llm-cost-tracker) · [**prompt-versioner**](https://github.com/darrshangovender/prompt-versioner) — the cost and reliability plumbing
+
+Domain work for [LeasEase](https://leasease.co.za), the rental-trust startup I founded — South African law, built to run offline:
+
+- [**lease-abstract**](https://github.com/darrshangovender/lease-abstract) — lease clause extraction with per-field citations, compliance checks against the Rental Housing Act and CPA, plain-English summaries for both parties
+- [**affordability-scorer**](https://github.com/darrshangovender/affordability-scorer) — explainable tenant affordability scoring with tamper detection, calibration and a fairness audit; no LLM in the scoring path (POPIA)
 
 ---
 
