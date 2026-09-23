@@ -1,79 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 280" role="img" aria-label="Darrshan Govender — Senior AI Engineer, LLM RAG Full-Stack, Durban GMT+2, available for fractional and contract work">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
   <defs>
-    <!-- background gradient -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1530"/>
-      <stop offset="55%" stop-color="#1f3a8a"/>
-      <stop offset="100%" stop-color="#4f46e5"/>
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="55%" stop-color="#121a33"/>
+      <stop offset="100%" stop-color="#1a1030"/>
     </linearGradient>
-    <!-- accent line gradient -->
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#22d3ee"/>
+    <radialGradient id="glow" cx="0.80" cy="0.15" r="0.6">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#6366f1"/>
       <stop offset="100%" stop-color="#a855f7"/>
     </linearGradient>
-    <!-- dot pattern -->
-    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.4" fill="#ffffff" opacity="0.06"/>
-    </pattern>
-    <!-- node circuit clip -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
 
-  <!-- background -->
-  <rect width="1280" height="280" fill="url(#bg)"/>
-  <rect width="1280" height="280" fill="url(#dots)"/>
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#glow)"/>
 
-  <!-- decorative right-side node graph (suggests "agentic / connected systems") -->
-  <g opacity="0.55" filter="url(#glow)" transform="translate(900, 35)">
-    <!-- nodes -->
-    <circle cx="60"  cy="40"  r="6" fill="#22d3ee"/>
-    <circle cx="180" cy="20"  r="5" fill="#a855f7"/>
-    <circle cx="260" cy="80"  r="6" fill="#22d3ee"/>
-    <circle cx="120" cy="120" r="5" fill="#ffffff"/>
-    <circle cx="220" cy="170" r="6" fill="#a855f7"/>
-    <circle cx="40"  cy="170" r="5" fill="#22d3ee"/>
-    <circle cx="320" cy="40"  r="4" fill="#ffffff"/>
-    <circle cx="320" cy="170" r="5" fill="#22d3ee"/>
-    <!-- edges -->
-    <g stroke="#22d3ee" stroke-width="1.2" opacity="0.7" fill="none">
-      <line x1="60"  y1="40"  x2="180" y2="20"/>
-      <line x1="180" y1="20"  x2="260" y2="80"/>
-      <line x1="60"  y1="40"  x2="120" y2="120"/>
-      <line x1="120" y1="120" x2="220" y2="170"/>
-      <line x1="120" y1="120" x2="40"  y2="170"/>
-      <line x1="260" y1="80"  x2="320" y2="40"/>
-      <line x1="260" y1="80"  x2="220" y2="170"/>
-      <line x1="220" y1="170" x2="320" y2="170"/>
-    </g>
+  <!-- faint grid, very low contrast -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="75"  x2="1200" y2="75"/>
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="225" x2="1200" y2="225"/>
+    <line x1="300" y1="0" x2="300" y2="300"/>
+    <line x1="600" y1="0" x2="600" y2="300"/>
+    <line x1="900" y1="0" x2="900" y2="300"/>
   </g>
 
-  <!-- left accent bar -->
-  <rect x="60" y="60" width="4" height="160" fill="url(#accent)" rx="2"/>
+  <g transform="translate(72, 0)">
+    <rect x="0" y="62" width="64" height="3" rx="1.5" fill="url(#rule)"/>
 
-  <!-- main typography -->
-  <g font-family="'Segoe UI', 'Inter', system-ui, sans-serif" fill="#ffffff">
-    <!-- eyebrow -->
-    <text x="80" y="80" font-size="14" font-weight="700" letter-spacing="3" fill="#a5b4fc">SENIOR AI ENGINEER</text>
-    <!-- name -->
-    <text x="80" y="140" font-size="56" font-weight="800" letter-spacing="-1.5">Darrshan Govender</text>
-    <!-- tagline -->
-    <text x="80" y="180" font-size="20" font-weight="500" opacity="0.92">
-      LLM &amp; RAG  ·  Agentic systems  ·  Production ML  ·  Full-stack delivery
+    <text x="0" y="106" fill="#f8fafc" font-size="42" font-weight="800" letter-spacing="-0.8">
+      Darrshan Govender
     </text>
-    <!-- availability strip -->
-    <g transform="translate(80, 215)">
-      <rect x="0" y="0" width="220" height="32" rx="16" fill="#059669"/>
-      <text x="110" y="21" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="0.5">AVAILABLE · 10–30 HRS/WEEK</text>
-      <rect x="232" y="0" width="170" height="32" rx="16" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
-      <text x="317" y="21" text-anchor="middle" font-size="13" font-weight="600">Durban  ·  GMT+2</text>
-      <rect x="414" y="0" width="160" height="32" rx="16" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
-      <text x="494" y="21" text-anchor="middle" font-size="13" font-weight="600">EMEA  ·  4hr US ET</text>
+
+    <text x="0" y="146" fill="#c7d2fe" font-size="21" font-weight="600">
+      AI engineer — I make LLM systems cheaper, faster, and safer.
+    </text>
+
+    <text x="0" y="178" fill="#7c8db5" font-size="15" font-weight="400">
+      Inference routing · context compression · evaluation · safety gateways
+    </text>
+
+    <!-- the four numbers: the actual pitch -->
+    <g transform="translate(0, 208)">
+      <g>
+        <text x="0" y="24" fill="#86efac" font-size="26" font-weight="800">−34%</text>
+        <text x="0" y="44" fill="#64748b" font-size="12" letter-spacing="0.6">INFERENCE COST</text>
+      </g>
+      <g transform="translate(190,0)">
+        <text x="0" y="24" fill="#c4b5fd" font-size="26" font-weight="800">92.5%</text>
+        <text x="0" y="44" fill="#64748b" font-size="12" letter-spacing="0.6">VS 67.5% BASELINE</text>
+      </g>
+      <g transform="translate(400,0)">
+        <text x="0" y="24" fill="#93c5fd" font-size="26" font-weight="800">−48%</text>
+        <text x="0" y="44" fill="#64748b" font-size="12" letter-spacing="0.6">TOKENS, FULL RECALL</text>
+      </g>
+      <g transform="translate(632,0)">
+        <text x="0" y="24" fill="#fda4af" font-size="26" font-weight="800">0%</text>
+        <text x="0" y="44" fill="#64748b" font-size="12" letter-spacing="0.6">FALSE POSITIVES</text>
+      </g>
     </g>
   </g>
 
-  <!-- subtle bottom accent line -->
-  <rect x="0" y="278" width="1280" height="2" fill="url(#accent)" opacity="0.8"/>
+  <!-- availability, right-aligned -->
+  <g transform="translate(1128, 0)" text-anchor="end">
+    <text x="0" y="72" fill="#86efac" font-size="13" font-weight="700" letter-spacing="0.8">AVAILABLE · CONTRACT &amp; FRACTIONAL</text>
+    <text x="0" y="94" fill="#64748b" font-size="13">Durban, South Africa · UTC+2</text>
+  </g>
+
+  <text x="72" y="286" fill="#475569" font-size="12">
+    Every figure above is reproduced by a benchmark script in its repository.
+  </text>
 </svg>
