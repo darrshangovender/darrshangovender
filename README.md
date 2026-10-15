@@ -60,4 +60,4 @@ Through [**Agulhas Code**](https://agulhascode.co.za) I've shipped this into pro
 **Contract build** — scoped LLM features, RAG systems, evals. Discovery through shipped and monitored.
 **Fractional AI lead** — 10–30 hrs/week, embedded. I own the roadmap, the prompt discipline, and the eval gates.
 
-📧 **darrshangovender@gmail.com** · 🌐 **[agulhascode.co.za](https://agulhascode.co.za)**
+📧 **dgovender@agulhascode.co.za** · 🌐 **[agulhascode.co.za](https://agulhascode.co.za)**
