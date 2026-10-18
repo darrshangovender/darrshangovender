@@ -1,63 +1,78 @@
-<a href="https://agulhascode.co.za">
-  <img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/banner.svg" alt="Darrshan Govender — AI engineer. LLM systems: cheaper, faster, safer." width="100%"/>
-</a>
+<p><a href="https://darrshangovender.github.io">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-light.svg">
+    <img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-light.svg" alt="Darrshan Govender, AI engineer. Industrial AI, built to be evaluated, audited and trusted. Predictive maintenance, knowledge assistants, supervised agents." width="100%">
+  </picture>
+</a></p>
 
-### AI engineer. I make LLM systems cheaper, faster, and safer.
+I build AI systems that engineering and operations teams can defend. My current focus is heavy industry: predictive maintenance, knowledge assistants that answer only from controlled documents, and agents that draft work but never act without human approval. I run [Agulhas Code](https://agulhascode.co.za), an AI engineering studio in Durban.
 
-I build production LLM infrastructure — inference routing, context compression, evaluation harnesses, and safety gateways — and I publish the tooling as open source with reproducible benchmarks.
+Every repository here runs offline with no API keys, states what its results were measured on, and lists its limitations. Where the data is synthetic or the model is simulated, the README says so.
 
-Independent, remote, available for contract and fractional work (10–30 hrs/week).
-**Durban, South Africa · UTC+2** — full overlap with EU/UK, four hours with US Eastern.
+**[See it run → darrshangovender.github.io](https://darrshangovender.github.io)**: replay a pump failing in the asset-health fleet report, then try to push an unsafe work order past maintenance-agent's approval gate. Both are driven by the repositories' own output.
 
----
+## Industrial AI
 
-### Selected work
+<p><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/pipeline-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/pipeline-light.svg">
+  <img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/pipeline-light.svg" alt="Flow diagram. Sensor data feeds asset-health, which raises an alert with a remaining-useful-life interval. plant-copilot supplies the cited procedure with its safety clause quoted verbatim. maintenance-agent drafts a work order, a rule-based verifier checks it, and it is held at a human approval gate until a person approves. Reference flow: each repository runs on its own, on synthetic data." width="100%">
+</picture></p>
 
-Every number below is reproduced by a script in its repo. Clone it and run `python benchmarks/run.py` — offline, no API keys.
+A reference flow, not an integrated product: asset-health raises the alert, plant-copilot supplies the controlled procedure, and maintenance-agent drafts the work order and waits for a person. They share no code and have not been tested together. All data is synthetic and labelled as such, so the results describe the method, not a plant.
 
-| Project | The problem it solves | Result |
+### [asset-health](https://github.com/darrshangovender/asset-health)
+
+Predictive maintenance for mining and processing assets: regime-aware anomaly detection, remaining useful life with an uncertainty interval, cost-aware alerting and structured work-order recommendations. Runs on a seeded synthetic fleet.<br>
+**Result:** On 80 held-out synthetic failures: 79 warned 3+ days ahead vs 70 for fixed thresholds, at about two-thirds the cost. Still ahead when failure signatures are scaled to 30%; behind at 15%, and the README shows that curve.
+
+### [plant-copilot](https://github.com/darrshangovender/plant-copilot)
+
+Bilingual Arabic and English assistant for SOPs and HSE procedures. Answers only from controlled documents, cites the exact clause and revision, applies access control before retrieval, and refuses when the answer is not there.<br>
+**Result:** 0 access-control leaks in 4,603 probes; every safety-critical clause quoted verbatim against a model that rewords everything; 68% correct on held-out questions it was never tuned on. Synthetic corpus.
+
+### [maintenance-agent](https://github.com/darrshangovender/maintenance-agent)
+
+Supervised maintenance-planning agent. Takes an asset-health alert, retrieves the relevant procedures with citations, drafts a work order, checks it with a rule-based safety verifier, and stops at a human approval gate. Every tool call is logged and replayable.<br>
+**Result:** Blocked 99.5% of seeded unsafe drafts, with the six it misses listed; 0 of 55 correct drafts wrongly blocked; 15 of 15 approval-gate bypass attempts refused. Each number states what it cannot show.
+
+<p><a href="https://github.com/darrshangovender/asset-health"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/report-asset-health.png" alt="Top of the asset-health fleet report: a synthetic-data notice, a fleet status table with remaining-useful-life intervals, and the fused anomaly score for a cyclone feed pump rising through its alert threshold before an injected failure. Synthetic data." width="100%"></a></p>
+
+<sub>Top of asset-health's self-contained fleet report on its seeded synthetic fleet. The full report also shows the work order it drafts.</sub>
+
+## LLM infrastructure
+
+Cost, safety and reliability controls that sit around a model.
+
+| Repository | What it does | Key result |
 |---|---|---|
-| **[cascade](https://github.com/darrshangovender/cascade)** | You pay frontier prices for every query, but most queries are easy. | Verifier-gated model cascade: **94% of the strongest model's accuracy at 34% lower cost**, 1.69 model calls/query. |
-| **[thinking-loop](https://github.com/darrshangovender/thinking-loop)** | A single LLM call is the entire reasoning surface most apps use, even on hard questions. | Five published test-time strategies + critic adjudicator: **92.5% vs a 67.5% single-call baseline** on a 40-question set. |
-| **[context-compress](https://github.com/darrshangovender/context-compress)** | Retrieved RAG context is mostly padding, and truncation silently destroys the answer. | **48% fewer tokens at 100% fact recall** — measured, because truncation scores 57% savings at 21.7% recall. |
-| **[guardrail](https://github.com/darrshangovender/guardrail)** | Most LLM features validate neither the prompt going in nor the answer coming out. | Injection detection, PII redaction, groundedness checks: **100% detection at 0% false positives** on the bundled corpus. |
+| **[cascade](https://github.com/darrshangovender/cascade)** | Verifier-gated model cascade: answer with the cheapest model first, escalate only when verification fails, fit the thresholds offline. Benchmarked on a simulated model. | Counts every verifier call at current prices. On the simulated benchmark a 2-tier cascade is 5% cheaper at 99% of the strong model's accuracy; the 3-tier one costs more, and the README shows why. |
+| **[context-compress](https://github.com/darrshangovender/context-compress)** | Prompt and RAG context compression with a fact-recall evaluator, so savings are reported next to what was lost. | On a synthetic RAG set: 48% fewer tokens with every fact kept, where naive truncation saves 57% but keeps 21.7%. |
+| **[guardrail](https://github.com/darrshangovender/guardrail)** | Safety gateway for model inputs and outputs: prompt-injection detection, PII redaction, groundedness checks and structured-output repair behind one policy layer. | On public datasets it did not train on: 59.6% of attacks caught, 0 false alarms on 178 benign prompts. Saudi National ID/Iqama, IBAN and mobile detection with checksums. |
+| **[sql-guardrails](https://github.com/darrshangovender/sql-guardrails)** | Makes LLM-written SQL safe to execute: sqlglot AST allowlisting, read-only enforcement and optional EXPLAIN cost limits. Ships an adversarial corpus. | Executes only the guard's own normalised SQL, so a parser disagreement between guard and database cannot become a bypass. 22 functions blocked permanently, beyond the reach of config. |
+| **[mcp-gateway](https://github.com/darrshangovender/mcp-gateway)** | MCP server wrapper with API-key auth, tenant isolation, per-tool guardrails, rate limits and an audit log. Serves the 2026-07-28 MCP revision and the 2025 revisions side by side. | STRIDE threat model; 253 tests |
+| **[agent-runtime](https://github.com/darrshangovender/agent-runtime)** | Checkpointed state-machine executor for agents: resume after a crash, identical-call loop breaker, model fallback chain, schema self-correction. | Design reference; no headline number |
+| **[thinking-loop](https://github.com/darrshangovender/thinking-loop)** | Published test-time reasoning strategies behind one interface, adjudicated by a critic, under hard token, time and cost budgets. | Benchmark harness; a real-model run needs your own key |
+| **[rag-eval-harness](https://github.com/darrshangovender/rag-eval-harness)** | Faithfulness, answer relevance and recall@k for RAG pipelines, wired into CI so a regression fails the build. | A CI gate, not a benchmark |
 
-Those four compose into one thesis about inference economics: **route to the cheapest model that will get it right, spend more compute only when the question is hard, shrink the input to every call, and validate both ends.**
+## Domain work
 
----
+- **[lease-abstract](https://github.com/darrshangovender/lease-abstract)** (for [LeasEase](https://leasease.co.za), the rental-trust startup I founded): South African residential lease abstraction with per-field clause citations and compliance checks against the Rental Housing Act and the Consumer Protection Act.
+- **[affordability-scorer](https://github.com/darrshangovender/affordability-scorer)** (LeasEase): explainable tenant affordability scoring with tamper detection, calibration and a fairness audit. No LLM in the scoring path.
+- **[whatsapp-agent-kit](https://github.com/darrshangovender/whatsapp-agent-kit)**: WhatsApp Business agents with webhook dedup, the session window rule, human handoff and POPIA-aware redaction. Runs offline against a mock transport.
 
-### Also open source
+**Also:** [multi-agent-orchestrator](https://github.com/darrshangovender/multi-agent-orchestrator) · [rag-graph](https://github.com/darrshangovender/rag-graph) · [rag-chatbot](https://github.com/darrshangovender/rag-chatbot) · [doc-intelligence](https://github.com/darrshangovender/doc-intelligence) · [insightengine](https://github.com/darrshangovender/insightengine) · [agent-tool-router](https://github.com/darrshangovender/agent-tool-router) · [semantic-cache](https://github.com/darrshangovender/semantic-cache) · [llm-cost-tracker](https://github.com/darrshangovender/llm-cost-tracker) · [prompt-versioner](https://github.com/darrshangovender/prompt-versioner) · [prompt-eval-toolkit](https://github.com/darrshangovender/prompt-eval-toolkit) · [lead-scorer](https://github.com/darrshangovender/lead-scorer) · [churn-forecasting](https://github.com/darrshangovender/churn-forecasting) · [recommendation-engine](https://github.com/darrshangovender/recommendation-engine)
 
-- [**agent-runtime**](https://github.com/darrshangovender/agent-runtime) — checkpointed state-machine executor for agents: resume after a crash, break identical-call loops, fall back across models
-- [**mcp-gateway**](https://github.com/darrshangovender/mcp-gateway) — MCP server with API-key auth, tenant isolation, per-tool guardrails, rate limits and an audit log
-- [**whatsapp-agent-kit**](https://github.com/darrshangovender/whatsapp-agent-kit) — WhatsApp Cloud API agents: webhook dedup, the 24-hour window, human handoff, POPIA redaction
-- [**multi-agent-orchestrator**](https://github.com/darrshangovender/multi-agent-orchestrator) — typed Pydantic handoffs between agents, workspace memory, full trace observability
-- [**rag-graph**](https://github.com/darrshangovender/rag-graph) — knowledge-graph-augmented retrieval; hybrid vector kNN + graph BFS for multi-hop questions
-- [**rag-eval-harness**](https://github.com/darrshangovender/rag-eval-harness) — faithfulness, recall@k, latency and cost, wired into CI so a prompt change can't merge on a regression
-- [**sql-guardrails**](https://github.com/darrshangovender/sql-guardrails) — sqlglot AST allowlisting so LLM-written SQL can't drop a table
-- [**semantic-cache**](https://github.com/darrshangovender/semantic-cache) · [**llm-cost-tracker**](https://github.com/darrshangovender/llm-cost-tracker) · [**prompt-versioner**](https://github.com/darrshangovender/prompt-versioner) — the cost and reliability plumbing
+## How I work
 
-Domain work for [LeasEase](https://leasease.co.za), the rental-trust startup I founded — South African law, built to run offline:
+- **Offline by default.** Tests, examples and benchmarks need no API keys and no network. Hosted-model paths are optional extras, so data can stay inside the client environment.
+- **Every number has a script.** Results are regenerated by a script in the repository and say what they were measured on: synthetic data, a simulated model, or a bundled corpus.
+- **Controls sit outside the model.** Rule-based verifiers, AST allowlists, access control before retrieval and human approval gates, not instructions in a prompt.
+- **Limitations are written down.** Each README has a Limitations section that says what changes on real data.
 
-- [**lease-abstract**](https://github.com/darrshangovender/lease-abstract) — lease clause extraction with per-field citations, compliance checks against the Rental Housing Act and CPA, plain-English summaries for both parties
-- [**affordability-scorer**](https://github.com/darrshangovender/affordability-scorer) — explainable tenant affordability scoring with tamper detection, calibration and a fairness audit; no LLM in the scoring path (POPIA)
+## Contact
 
----
+Available for contract and fractional work. I am in Durban (UTC+2), one hour behind Riyadh, so the working day overlaps almost entirely with Gulf hours.
 
-### How I work
-
-Structured outputs at every model boundary. Evals in CI that block a merge on regression. Guardrails by default — citation enforcement, AST allowlists, human-review queues. Cost and latency attributed per call.
-
-Frameworks turn over every six months; that discipline doesn't. It's also why every repo here ships a benchmark you can re-run rather than a number you have to take on faith.
-
-Through [**Agulhas Code**](https://agulhascode.co.za) I've shipped this into production: ~94% accuracy on a natural-language-to-SQL layer over a live warehouse with zero destructive incidents, a RAG assistant at >0.95 faithfulness, and report queries cut from minutes to sub-second on multi-million-row Postgres.
-
----
-
-### Working together
-
-**Architecture review** — a week with your team, mapping the AI surface. You get a written report and a 30-day plan.
-**Contract build** — scoped LLM features, RAG systems, evals. Discovery through shipped and monitored.
-**Fractional AI lead** — 10–30 hrs/week, embedded. I own the roadmap, the prompt discipline, and the eval gates.
-
-📧 **dgovender@agulhascode.co.za** · 🌐 **[agulhascode.co.za](https://agulhascode.co.za)**
+[darrshangovender.github.io](https://darrshangovender.github.io) · [agulhascode.co.za](https://agulhascode.co.za) · darrshangovender@gmail.com
