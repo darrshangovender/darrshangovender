@@ -1,45 +1,39 @@
-<p><a href="https://darrshangovender.github.io">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-light.svg">
-    <img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-light.svg" alt="Darrshan Govender, AI engineer. Industrial AI, built to be evaluated, audited and trusted. Predictive maintenance, knowledge assistants, supervised agents." width="100%">
-  </picture>
-</a></p>
+<a href="https://darrshangovender.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/banner-light.svg" alt="Darrshan Govender. Industrial AI engineer and founder of Agulhas Code, Durban, South Africa. Industrial AI, built to be evaluated, audited and trusted. Predictive maintenance, cited procedure assistants, supervised agents."></picture></a>
 
-I build AI systems that engineering and operations teams can defend. My current focus is heavy industry: predictive maintenance, knowledge assistants that answer only from controlled documents, and agents that draft work and stop for human approval before anything is acted on. I run [Agulhas Code](https://agulhascode.co.za), an AI engineering studio in Durban.
+Industrial AI engineer and founder of Agulhas Code in Durban, South Africa: predictive maintenance, cited procedure assistants and human-supervised agents for heavy industry, each published with how it was tested and where it falls short.
+
+**Available for contract and fractional work.** Durban (UTC+2), one hour behind Riyadh, so the working day overlaps almost entirely with Gulf hours.<br>
+[Website](https://darrshangovender.github.io/) · [LinkedIn](https://www.linkedin.com/in/darrshangovender/) · [Agulhas Code](https://agulhascode.co.za) · darrshangovender@gmail.com
 
 The featured repositories run offline by default with no API keys, state what their results were measured on, and list their limitations. Where the data is synthetic or the model is simulated, the README says so.
 
-**[See it run → darrshangovender.github.io](https://darrshangovender.github.io)**: replay a pump failing in the asset-health fleet report, then try to push an unsafe work order past maintenance-agent's approval gate. Both are driven by the repositories' own output.
+## Selected work
 
-## Industrial AI
+<a href="https://github.com/darrshangovender/asset-health"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-asset-health-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-asset-health-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-asset-health-light.svg" alt="asset-health. 79 of 80 injected failures warned 3 or more days ahead, against 70 for the better of two tuned fixed alarm limits. Synthetic data." width="48%"></picture></a>
+<a href="https://github.com/darrshangovender/plant-copilot"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-plant-copilot-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-plant-copilot-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-plant-copilot-light.svg" alt="plant-copilot. 0 access-control leaks in 4,603 probes of the document store. Synthetic corpus." width="48%"></picture></a>
+<a href="https://github.com/darrshangovender/maintenance-agent"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-maintenance-agent-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-maintenance-agent-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-maintenance-agent-light.svg" alt="maintenance-agent. 99.5 percent of seeded unsafe work-order drafts blocked, 1,195 of 1,201, with the six misses listed. Synthetic data." width="48%"></picture></a>
+<a href="https://github.com/darrshangovender/guardrail"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-guardrail-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-guardrail-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-guardrail-light.svg" alt="guardrail. 59.6 percent of 193 labelled attacks flagged, with 0 false alarms on 178 benign prompts, on held-out splits of two public datasets." width="48%"></picture></a>
+<a href="https://github.com/darrshangovender/mcp-gateway"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-mcp-gateway-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-mcp-gateway-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-mcp-gateway-light.svg" alt="mcp-gateway. 253 tests, all offline, and a STRIDE threat model." width="48%"></picture></a>
+<a href="https://github.com/darrshangovender?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-more-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-more-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/card-more-light.svg" alt="More repositories: cascade, context-compress, sql-guardrails, agent-runtime, thinking-loop and rag-eval-harness, plus domain work." width="48%"></picture></a>
 
-<p><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/pipeline-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/pipeline-light.svg">
-  <img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/pipeline-light.svg" alt="Flow diagram. Sensor data feeds asset-health, which raises an alert with a remaining-useful-life interval. plant-copilot supplies the cited procedure with its safety clause quoted verbatim. maintenance-agent drafts a work order, a rule-based verifier checks it, and it is held at a human approval gate until a person approves. Reference flow: each repository runs on its own, on synthetic data." width="100%">
-</picture></p>
+## The maintenance loop
 
-A reference flow, not an integrated product: asset-health raises the alert, plant-copilot supplies the controlled procedure, and maintenance-agent drafts the work order and waits for a person. They share no code and have not been tested together. All data is synthetic and labelled as such, so the results describe the method, not a plant.
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/loop-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/loop-light.svg"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/loop-light.svg" alt="The maintenance loop in five stages. asset-health raises an alert with remaining useful life as an interval. plant-copilot finds the controlled procedure and quotes the clause and revision. maintenance-agent drafts the work order. A rule-based verifier with 16 rules and no model checks the draft. A human approval gate needs a signature before a work order is released. The first three are separate repositories that share no code."></picture>
 
-### [asset-health](https://github.com/darrshangovender/asset-health)
-
-Predictive maintenance for mining and processing assets: regime-aware anomaly detection, remaining useful life with an uncertainty interval, cost-aware alerting and structured work-order recommendations. Runs on a seeded synthetic fleet.<br>
-**Result:** On 80 held-out synthetic failures: 79 warned 3+ days ahead vs 70 for the better of two tuned fixed-limit baselines, at about two-thirds of that baseline's illustrative cost. Still ahead when failure signatures are scaled to 30%; behind at 15%, and the README shows that curve.
-
-### [plant-copilot](https://github.com/darrshangovender/plant-copilot)
-
-Bilingual Arabic and English assistant for SOPs and HSE procedures. Answers only from controlled documents, cites the exact clause and revision, applies access control before retrieval, and refuses when the answer is not there.<br>
-**Result:** 0 access-control leaks in 4,603 probes; safety-critical clauses quoted verbatim in 64 of 64 answers against a simulated model; 68% correct on held-out questions it was never tuned on. Synthetic corpus.
-
-### [maintenance-agent](https://github.com/darrshangovender/maintenance-agent)
-
-Supervised maintenance-planning agent. Takes an asset-health alert, retrieves the relevant procedures with citations, drafts a work order, checks it with a rule-based safety verifier, and stops at a human approval gate. Every tool call is logged and replayable.<br>
-**Result:** Blocked 99.5% of seeded unsafe drafts, with the six it misses listed; 0 of 55 correct drafts wrongly blocked; 15 of 15 approval-gate bypass attempts refused. Each number states what it cannot show.
+A reference flow through three separate repositories, [asset-health](https://github.com/darrshangovender/asset-health), [plant-copilot](https://github.com/darrshangovender/plant-copilot) and [maintenance-agent](https://github.com/darrshangovender/maintenance-agent). They share no code, each runs on its own synthetic data, and maintenance-agent has not been run against the other two, so this is a design and not an integrated product. The [site](https://darrshangovender.github.io/) has architecture diagrams of each and two replays driven by the repositories' own output.
 
 <p><a href="https://github.com/darrshangovender/asset-health"><img src="https://raw.githubusercontent.com/darrshangovender/darrshangovender/main/assets/report-asset-health.png" alt="Top of the asset-health fleet report: a synthetic-data notice, a fleet status table with remaining-useful-life intervals, and the fused anomaly score for a cyclone feed pump rising through its alert threshold before an injected failure. Synthetic data." width="100%"></a></p>
 
 <sub>Top of asset-health's self-contained fleet report on its seeded synthetic fleet. The full report also shows the work order it drafts.</sub>
+
+## Research harness
+
+The harness runs a maintenance stack as one loop on a simulated plant, attacks it on held-out seeds under a pre-registration, and publishes its losses at the same size as its wins. Version 0.2 asks the same question of NASA's C-MAPSS turbofan trajectories, which are simulated, not field data.
+
+- **[closed-loop](https://github.com/darrshangovender/closed-loop) (v0.1, synthetic data).** The shield behaved as its proof predicts: 0 violations of P1 to P3 in 500 episodes for each of two hostile proposers, against 306 of 500 and 150 of 150 with it off. The thesis did not hold where it was registered: closing the loop did not move pooled coverage outside the band of 0.03 (C-PERC.pooled, a loss). A second full run matched the first on 2,962 of the 2,967 records they share.
+- **[closed-loop-v2](https://github.com/darrshangovender/closed-loop-v2) (v0.2, NASA C-MAPSS, simulated).** One full run, on 10 November 2026, after the freeze. V1, calibrated once, stayed inside the band when the loop closed: -0.0058 pooled over 373 evaluation units (interval -0.0255 to 0.0143), a loss for the thesis. V2L, which learns from the lives the policy ends, lost coverage: -0.0767 pooled (interval -0.0864 to -0.0670), a win for the thesis.
+
+The limits are in each repository's own README: one author, simulated data, and a proof that covers a finite abstraction and safety, not progress.
 
 ## LLM infrastructure
 
@@ -75,4 +69,4 @@ Cost, safety and reliability controls that sit around a model.
 
 Available for contract and fractional work. I am in Durban (UTC+2), one hour behind Riyadh, so the working day overlaps almost entirely with Gulf hours.
 
-[darrshangovender.github.io](https://darrshangovender.github.io) · [agulhascode.co.za](https://agulhascode.co.za) · darrshangovender@gmail.com
+[darrshangovender.github.io](https://darrshangovender.github.io/) · [LinkedIn](https://www.linkedin.com/in/darrshangovender/) · [agulhascode.co.za](https://agulhascode.co.za) · darrshangovender@gmail.com
